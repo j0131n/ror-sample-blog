@@ -25,6 +25,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Jquery Rails
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+
+# AngularJS Rails
+gem 'angularjs-rails', '~> 1.6', '>= 1.6.8'
+
+# materializs-sass
+gem 'materialize-sass', '~> 1.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

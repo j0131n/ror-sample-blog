@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title> RoR | Sample Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+  <header>
+  <div class="navbar-fixed" style="margin-bottom: 40px !important">
+    <nav class="blue darken-1">
+      <div class="nav-wrapper container">
+        <%= link_to "Rails Blog", home_path, class: 'brand-logo waves-effect waves-teal' %>
+      </div>
+    </nav>
+  </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
+
   </body>
 </html>
