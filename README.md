@@ -10,3 +10,5 @@ Before you dive in into the this project make sure to check out the following, a
 - Go to project folder run: bundle install
 - > Run the webrick server/puma: rails server or rails s
 - Default url and port would be: 127.0.0.1:3000 and you can change it inside config > puma.rb
+- If prompted of yarn packages outdated:
+- > Run yarn install --check-files
