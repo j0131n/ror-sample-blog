@@ -1,0 +1,20 @@
+<div class="row">
+  <h3> Add Comment </h3>
+  <%= form_for([@post, @post.comments.build]) do |form| %>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.text_field :username, class: 'validate', placeholder: 'Username' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.text_area :comment, class: 'materialize-textarea' %>
+      </div>
+    </div>
+
+    <%= form.submit "Submit", class: 'btn waves-effect waves-light', disable_with: 'Submiting...' %>
+  <% end %>
+</div>
+</div>

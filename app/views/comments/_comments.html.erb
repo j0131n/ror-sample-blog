@@ -1,0 +1,16 @@
+<% if @post.comments.count > 0 %>
+  <div class="row container">
+    <ul class="collection">
+      <% @post.comments.each do |c| %>
+        <li class="collection-item avatar">
+            <i class="material-icons circle">chat</i>
+            <span class="title"><%= c.comment %></span>
+            <p><%= c.username %></p>
+            <%= link_to [c.post, c], method: :delete, class: 'secondary-content' do %>
+                <i class="material-icons" style="color: red !important">delete</i>
+            <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

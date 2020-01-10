@@ -1,22 +1,33 @@
 <div class="row">
-  <% @posts.each do |post| %>
-    <div class="col s12">
-      <div class="card darken-1 z-depth-3 hoverable">
-        <div class="card-content">
-          <span class="card-title">
-            <%= post.title %>
-            <a href="<%= post_path(post) %>" class="btn-floating halfway-fab waves-effect waves-teal orange darken-1" style="bottom: 35px !important">
-                <i class="material-icons" style="line-height: unset !important">open_in_new</i>
-            </a>
-            <%= link_to "Delete", post_path(post), method: :delete, class: 'btn-floating halfway-fab waves-effect waves-teal red darken-1', style: 'right: 80px; bottom: 35px !important' %>
-          </span>
-          <p><%= post.description %></p>
-        </div>
-        <div class="card-action blue darken-1">
-          <a href="#" class="white-text">user here</a>
+  <% if @posts.count > 0 %>
+    <% @posts.each do |post| %>
+      <div class="col s12">
+        <div class="card darken-1 z-depth-3 hoverable">
+          <div class="card-content">
+            <span class="card-title">
+              <%= post.title %>
+              <%= link_to post_path(post), method: :delete, class: 'btn-floating halfway-fab waves-effect waves-teal red darken-1', style: 'bottom: 15px !important' do %>
+                <i class="material-icons" style="line-height: unset !important">delete</i>
+              <% end %>
+              <a href="<%= post_path(post) %>" class="btn-floating halfway-fab waves-effect waves-teal orange darken-1" style="right: 80px; bottom: 15px !important">
+                  <i class="material-icons" style="line-height: unset !important">open_in_new</i>
+              </a>
+            </span>
+            <p><%= post.description %></p>
+          </div>
+          <div class="card-action blue darken-1">
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+      <div class="col s12">
+        <div class="card darken-1 z-depth-3 hoverable">
+          <div class="card-content">
+            <p>No blog posts yet!</p>
+          </div>
+        </div>
+      </div>
   <% end %>
 
   <div class="fixed-action-btn">
